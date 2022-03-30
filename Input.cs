@@ -15,16 +15,25 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Arguments: none
         //Returns: string
         //Gets text input from the keyboard
-        public static string manualTextInput()
+        public string manualTextInput()
         {
             string manualInput;
 			Console.Write("Enter sentences ending with * - ");
 			manualInput = Console.ReadLine();
             while (string.IsNullOrEmpty(manualInput))
-                {
-                    Console.WriteLine("Can't be empty!");
-                    Console.Write("Enter sentences ending with * - ");
-                    manualInput = Console.ReadLine();
+                {                    
+
+                    try
+                    {
+                        Console.WriteLine("Can't be empty!");
+                        Console.Write("Enter sentences ending with * - ");
+                        manualInput = Console.ReadLine();
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.Write("Error info: " + ex.Message);
+                    }
+
                 }
             return manualInput;
         }

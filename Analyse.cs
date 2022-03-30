@@ -14,7 +14,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Arguments: string
         //Returns: list of integers
         //Calculates and returns an analysis of the text
-        public static List<int> analyseText(string input)
+        public List<int> analyseText(string input)
         {
             int stotal = 0;
             int utotal = 0;

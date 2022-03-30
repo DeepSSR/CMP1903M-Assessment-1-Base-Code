@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CMP1903M_Assessment_1_Base_Code;
+using static CMP1903M_Assessment_1_Base_Code.Input; 
+using static CMP1903M_Assessment_1_Base_Code.Analyse; 
+using static CMP1903M_Assessment_1_Base_Code.Report;
 
 namespace CMP1903M_Assessment_1_Base_Code
 {
@@ -12,19 +15,22 @@ namespace CMP1903M_Assessment_1_Base_Code
     {
         static void Main()
         {
+            Input iObject = new Input();
+            Analyse aObject = new Analyse();
+            Report rObject = new Report();
             //Local list of integers to hold the first five measurements of the text
             List<int> parameters = new List<int>();
 
             //Create 'Input' object
             //Get either manually entered text, or text from a file
             string input; 
-            input = CMP1903M_Assessment_1_Base_Code.Input.manualTextInput();
-            Console.WriteLine(input);
+            input = iObject.manualTextInput();
+            //Console.WriteLine(input);
 
             //Create an 'Analyse' object
             //Pass the text input to the 'analyseText' method
             List<int> analyse = new List<int>();
-            analyse = CMP1903M_Assessment_1_Base_Code.Analyse.analyseText(input);
+            analyse = aObject.analyseText(input);
             Console.WriteLine(analyse);
             //Receive a list of integers back
             //foreach(var i in analyse){
@@ -32,7 +38,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             //}
 
             //Report the results of the analysis
-            CMP1903M_Assessment_1_Base_Code.Report.outputConsole(analyse);
+            rObject.outputConsole(analyse);
 
             //TO ADD: Get the frequency of individual letters?
             

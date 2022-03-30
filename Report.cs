@@ -13,10 +13,15 @@ namespace CMP1903M_Assessment_1_Base_Code
         //eg.   public void outputConsole(List<int>)
 
         List<int> values = new List<int>();
-        public static void outputConsole(List<int> values){
-              foreach(var i in values){
-                Console.WriteLine(i);
-            }
+        public void outputConsole(List<int> values){
+            //   foreach(var i in values){
+            //     Console.WriteLine(i);
+            // }
+            Console.WriteLine("Total Scentences " + values[0]);
+            Console.WriteLine("Total Vowels " + values[1]);
+            Console.WriteLine("Total Consonants " + values[2]);
+            Console.WriteLine("Total Upper Case Letters " + values[3]);
+            Console.WriteLine("Total Lower Case Letters " + values[4]);
         }
 
     }
